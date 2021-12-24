@@ -1,0 +1,43 @@
+{
+    "db": [
+        {
+         "name": "Vertex",
+         "description": "3D game engine built on HTML Canvas (no WebGL).",
+         "socials": [
+            {"github": "https://github.com/danielfamiyeh/vertex"}
+         ],
+         "features": [
+             "OBJ mesh parser",
+             "3D Projection - perspective and orthographic",
+             "Lighting - ambient, diffuse, and specular",
+             "FPS camera navigation",
+             "Broad-phase collision detecion"
+         ],
+         "skills": [
+             "TypeScript",
+             "Mocha",
+             "Linear Algebra",
+             "Mechanics"
+         ]
+        },
+
+        {
+            "name": "Cortex",
+            "description": "Deep learning framework.",
+            "socials": [
+                {"cortex": "https://github.com/danielfamiyeh/cortex"}
+            ],
+            "features": [
+                "DNN Model Creation",
+                "CSV parser with feature scaling - Z-score & min-max",
+                "Range of optimizers - ADAM, RMS, Momentum and SGD"
+            ],
+            "skills": [
+                "Java 8",
+                "JUnit",
+                "AI / ML",
+                "Calculus"             
+            ]
+        }
+    ]
+}

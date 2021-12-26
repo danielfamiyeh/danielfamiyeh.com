@@ -27,31 +27,29 @@
         </div>
 
         <div class="row h-50 d-none d-lg-flex">
-          <div class="profile-img col col-lg-4 h-100" />
+          <div class="bottom-left-img col col-lg-4 h-100" />
 
-          <div class="col quote col-lg-4 h-100 d-flex flex-column align-items-center justify-content-center">
-            <h2>WHAT I CANNOT</h2>
-            <h2 class="italic">CREATE</h2>
-            <h2 class="h1 persian-plum">◦</h2>
-            <h2>I DO NOT</h2>
-            <h2 class="italic">UNDERSTAND</h2>
-          </div>
-          <div class="col sample-photo col-lg-4 h-100" />
+          <div
+            class="col bottom-right-img quote col-lg-4 h-100 d-flex flex-column align-items-center justify-content-center"
+          />
+          <div class="col bottom-center-img col-lg-4 h-100" />
         </div>
       </div>
 
       <div class="col-3 d-none d-lg-block vh-75">
-        <h1 class="photographer">P H O T O <i class="persian-plum">◦</i><br />G R A P H E R</h1>
+        <h1 class="photographer">
+          P H O T O <i class="persian-plum">◦</i><br />G R A P H E R
+        </h1>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Home"
+  name: 'Home'
 });
 </script>
 
@@ -78,7 +76,7 @@ export default defineComponent({
   margin-left: 5vw;
   transform: rotate(-90deg);
   white-space: nowrap;
-  font-size: 6.8em;
+  font-size: 6em;
   user-select: none;
 }
 
@@ -92,15 +90,29 @@ export default defineComponent({
   }
 }
 
-.profile-img {
-  background-image: url("../assets/photo/profile_landscape.jpg");
+.bottom-left-img {
+  background-image: url('../assets/photo/nomi_cropped.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.sample-photo {
-  background-image: url("../assets/photo/maisiebw1.jpg");
+.bottom-center-img {
+  background-image: url('../assets/photo/maisiebw1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bottom-right-img {
+  /* background: linear-gradient(
+      0deg,
+      rgba(17, 17, 17, 0.7),
+      rgba(17, 17, 17, 0.6)
+    ),
+    url('../assets/photo/bk.jpg'); */
+
+  background-image: url('../assets/photo/micro.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

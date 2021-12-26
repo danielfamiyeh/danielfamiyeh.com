@@ -1,20 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="h-100">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/projects">Projects</router-link>
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <style>
 @font-face {
   font-family: Oranienbaum;
-  src: url("../src/assets/fonts/Oranienbaum.ttf") format("truetype");
+  src: url('../src/assets/fonts/Oranienbaum.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Vidaloka;
-  src: url("../src/assets/fonts/Vidaloka.ttf") format("truetype");
+  src: url('../src/assets/fonts/Vidaloka.ttf') format('truetype');
 }
 
 :root {
@@ -74,11 +77,13 @@ h6 {
 
 .stroke-white {
   color: var(--bg-main);
-  text-shadow: -1px -1px 0 var(--pale-gray), 1px -1px 0 var(--pale-gray), -1px 1px 0 var(--pale-gray), 1px 1px 0 var(--pale-gray);
+  text-shadow: -1px -1px 0 var(--pale-gray), 1px -1px 0 var(--pale-gray),
+    -1px 1px 0 var(--pale-gray), 1px 1px 0 var(--pale-gray);
 }
 
 .stroke-plum {
   color: var(--bg-main);
-  text-shadow: -1px -1px 0 var(--persian-plum), 1px -1px 0 var(--persian-plum), -1px 1px 0 var(--persian-plum), 1px 1px 0 var(--persian-plum);
+  text-shadow: -1px -1px 0 var(--persian-plum), 1px -1px 0 var(--persian-plum),
+    -1px 1px 0 var(--persian-plum), 1px 1px 0 var(--persian-plum);
 }
 </style>

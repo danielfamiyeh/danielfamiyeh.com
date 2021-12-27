@@ -1,13 +1,28 @@
 <template>
   <div class="h-100">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/projects">Projects</router-link>
+      <span v-for="(route, i) in routes" :key="route.name">
+        <router-link :to="route.path">{{ route.name }} </router-link>
+        <span v-if="i !== routes.length - 1"> | </span>
+      </span>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+import { defineComponent } from 'vue';
+import { routes } from '@/router';
+
+export default defineComponent({
+  name: 'App',
+  data() {
+    return {
+      routes
+    };
+  }
+});
+</script>
 
 <style>
 @font-face {
@@ -44,7 +59,7 @@ body {
 }
 
 #app {
-  font-family: Oranienbaum, serif;
+  font-family: serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -85,5 +100,9 @@ h6 {
   color: var(--bg-main);
   text-shadow: -1px -1px 0 var(--persian-plum), 1px -1px 0 var(--persian-plum),
     -1px 1px 0 var(--persian-plum), 1px 1px 0 var(--persian-plum);
+}
+
+.box-shadow {
+  box-shadow: 10px 20px;
 }
 </style>

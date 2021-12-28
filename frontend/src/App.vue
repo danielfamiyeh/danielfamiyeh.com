@@ -77,6 +77,16 @@ h6 {
   font-family: Vidaloka;
 }
 
+button {
+  color: var(--persian-plum);
+  background: none;
+  border: none;
+}
+
+button:hover {
+  color: var(--rose-taupe);
+}
+
 #nav {
   padding: 30px;
 }

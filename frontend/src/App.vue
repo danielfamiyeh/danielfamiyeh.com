@@ -1,26 +1,18 @@
 <template>
   <div class="h-100">
-    <div id="nav">
-      <span v-for="(route, i) in routes" :key="route.name">
-        <router-link :to="route.path">{{ route.name }} </router-link>
-        <span v-if="i !== routes.length - 1"> | </span>
-      </span>
-    </div>
+    <navbar />
     <router-view />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { routes } from '@/router';
+
+import Navbar from './components/Navbar.vue';
 
 export default defineComponent({
   name: 'App',
-  data() {
-    return {
-      routes
-    };
-  }
+  components: { Navbar }
 });
 </script>
 

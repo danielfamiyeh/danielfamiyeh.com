@@ -1,7 +1,7 @@
 <template>
   <div
     class="div-with-bg-img photoblog-img h-100"
-    :style="`background-image: url(${baseImgUrl}/${image.file}.jpg);`"
+    :style="`background-image: url(${baseImageUrl}/${image.file}.jpg);`"
   >
     <caption
       class="h-100 w-100 d-flex align-items-center justify-content-center"
@@ -20,7 +20,7 @@ export default defineComponent({
   name: 'Photo',
   props: {
     image: Object,
-    baseImgUrl: String
+    baseImageUrl: String
   }
 });
 </script>

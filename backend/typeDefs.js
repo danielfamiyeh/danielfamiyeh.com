@@ -29,6 +29,7 @@ module.exports = {
     type PhotoSet {
       title: String
       files: [String]
+      dateUploaded: Date
     }
 
     type Query {
@@ -80,9 +81,9 @@ module.exports = {
 
       addPhotoSet(title: String, files: [String]): PhotoSet
 
-      update(id: ID, photos: [PhotoInput]): PhotoSet
+      updatePhotoSet(id: ID, photos: [PhotoInput]): PhotoSet
 
-      remove(id: ID): ID
+      removePhotoSet(id: ID): ID
     }
   `
 };

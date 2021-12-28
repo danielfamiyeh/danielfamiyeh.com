@@ -4,7 +4,7 @@
       <div class="col col-lg-9 h-100 page-box box-shadow">
         <div class="row h-50">
           <div
-            v-for="img in [...allPhotos, allPhotoSets].sort(
+            v-for="img in [...allPhotos, ...allPhotoSets].sort(
               (a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded)
             )"
             :key="img.dateUploaded"
@@ -13,13 +13,10 @@
             <photo
               v-if="img.__typename === 'Photo'"
               :image="img"
-              :baseImgUrl="baseImgUrl"
+              :baseImageUrl="baseImageUrl"
             />
 
-            <div
-              v-else
-              class="h-100 d-flex align-items-center justify-content-center"
-            />
+            <photo-set v-else :photoSet="img" :baseImageUrl="baseImageUrl" />
           </div>
         </div>
       </div>
@@ -33,19 +30,30 @@
 
 <script lang="ts">
 import gql from 'graphql-tag';
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 
 import Photo from '../components/Photo.vue';
+import PhotoSet from '../components/PhotoSet.vue';
 
 export default defineComponent({
   name: 'Photos',
-  components: { Photo },
+  components: { Photo, PhotoSet },
   apollo: {
     allPhotos: gql`
       query {
         allPhotos: photos {
           file
           caption
+          dateUploaded
+        }
+      }
+    `,
+
+    allPhotoSets: gql`
+      query {
+        allPhotoSets: photoSets {
+          title
+          files
           dateUploaded
         }
       }
@@ -56,7 +64,7 @@ export default defineComponent({
     return {
       allPhotos: [],
       allPhotoSets: [],
-      baseImgUrl: process.env.VUE_APP_S3_BUCKET
+      baseImageUrl: process.env.VUE_APP_S3_BUCKET
     };
   },
 

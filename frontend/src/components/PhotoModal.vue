@@ -15,7 +15,7 @@
       >
         <button class="close-btn fas fa-times" @click="onCloseModal()" />
         <img
-          class="h-100"
+          class="h-75"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}.jpg`"
         />
       </div>

@@ -6,12 +6,10 @@
     :data-url="`${baseImageUrl}/${photoSet.files[photoSet.cover]}.jpg`"
   >
     <div
-      class="count-container d-flex align-items-center justify-content-center w-100 h-100"
+      class="multiple-container d-flex align-items-center justify-content-center w-100 h-100"
       @click="onToggleModal(true)"
     >
-      <span class="h3 count">
-        {{ setLength }}
-      </span>
+      <i class="multiple fas fa-images fa-2x" />
     </div>
 
     <photo-modal
@@ -60,17 +58,17 @@ export default defineComponent({
   cursor: pointer;
 }
 
-.photoblog-photo-set .count-container {
+.photoblog-photo-set .multiple-container {
   opacity: 1;
   color: white;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.35)
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
   );
 }
 
-.photoblog-photo-set:hover .count {
+.photoblog-photo-set:hover .multiple {
   text-decoration: underline;
   text-underline-position: under;
 }

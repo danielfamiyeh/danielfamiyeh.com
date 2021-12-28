@@ -5,22 +5,45 @@
   >
     <caption
       class="h-100 w-100 d-flex align-items-center justify-content-center"
+      @click="onToggleModal(true)"
     >
       {{
         image.caption
       }}
     </caption>
+
+    <photo-modal
+      :show="showModal"
+      :photoSet="{ files: [image.file], title: image.caption }"
+      :baseImageUrl="baseImageUrl"
+      @closeModal="onToggleModal(false)"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import PhotoModal from '../components/PhotoModal.vue';
+
 export default defineComponent({
   name: 'Photo',
   props: {
     image: Object,
     baseImageUrl: String
+  },
+  components: { PhotoModal },
+  computed: {},
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    onToggleModal(state: boolean) {
+      this.$emit('toggleModal', state);
+      this.$data.showModal = state;
+    }
   }
 });
 </script>

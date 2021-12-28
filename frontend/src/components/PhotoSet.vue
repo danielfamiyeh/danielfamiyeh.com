@@ -15,44 +15,26 @@
       </span>
     </div>
 
-    <div v-show="openModal" class="ps-modal row position-fixed w-100 h-100">
-      <div class="col-2 h-100 d-flex align-items-center justify-content-center">
-        <button
-          v-if="modalPhotoIndex > 0"
-          class="fas fa-chevron-left"
-          @click="changeModalPhoto(-1)"
-        />
-      </div>
-      <div
-        class="col-8 h-100 d-flex flex-column align-items-center justify-content-center"
-      >
-        <button class="close-btn fas fa-times" @click="onToggleModal(false)" />
-        <div class="h-75 d-flex align-items-center justify-content-center">
-          <img
-            class="w-75"
-            :src="`${baseImageUrl}/${photoSet.files[modalPhotoIndex]}.jpg`"
-          />
-        </div>
-      </div>
-      <div class="col-2 h-100 d-flex align-items-center justify-content-center">
-        <button
-          v-if="modalPhotoIndex < setLength - 1"
-          class="fas fa-chevron-right"
-          @click="changeModalPhoto(1)"
-        />
-      </div>
-    </div>
+    <photo-modal
+      :show="showModal"
+      :photoSet="photoSet"
+      :baseImageUrl="baseImageUrl"
+      @closeModal="onToggleModal(false)"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import PhotoModal from '../components/PhotoModal.vue';
+
 export default defineComponent({
   props: {
     photoSet: Object,
     baseImageUrl: String
   },
+  components: { PhotoModal },
   setup() {},
   computed: {
     setLength() {
@@ -63,32 +45,19 @@ export default defineComponent({
   },
   data() {
     return {
-      openModal: false,
-      modalPhotoIndex: 0
+      showModal: false
     };
   },
   methods: {
     onToggleModal(state: boolean) {
       this.$emit('toggleModal', state);
-      this.$data.openModal = state;
-    },
-
-    changeModalPhoto(incr: number) {
-      if (incr > 0 && this.modalPhotoIndex < this.setLength) {
-        this.modalPhotoIndex++;
-      } else if (incr < 0 && this.modalPhotoIndex > 0) {
-        this.modalPhotoIndex--;
-      }
+      this.$data.showModal = state;
     }
   }
 });
 </script>
 
 <style>
-.photoblog-photo-set button {
-  font-size: 2rem;
-}
-
 .photoblog-photo-set:hover {
   cursor: pointer;
 }
@@ -106,13 +75,5 @@ export default defineComponent({
 .photoblog-photo-set:hover .count {
   text-decoration: underline;
   text-underline-position: under;
-}
-
-.photoblog-photo-set .ps-modal {
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.7);
-  cursor: auto;
 }
 </style>

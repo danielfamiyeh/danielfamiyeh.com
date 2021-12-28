@@ -2,7 +2,7 @@
   <div class="photos container h-75">
     <div class="row h-100">
       <div class="col col-lg-9 h-100 page-box box-shadow">
-        <div class="row h-50">
+        <div class="row h-50 fade-in">
           <div
             v-for="(img, i) in [...allPhotos, ...allPhotoSets].sort(
               (a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded)

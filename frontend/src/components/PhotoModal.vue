@@ -76,6 +76,7 @@ export default defineComponent({
   z-index: 2;
   background: rgba(0, 0, 0, 0.7);
   cursor: auto;
+  animation: fadeInAnim 0.35s ease-in;
 }
 
 .p-modal button {

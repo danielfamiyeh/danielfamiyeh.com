@@ -7,7 +7,7 @@
 
           <div class="col col-lg-8 h-100">
             <div class="row d-flex align-items-center h-100">
-              <div class="col no-border fade-in">
+              <div class="col fade-in no-border">
                 <h1 class="soft-dev">
                   SOFTWARE
                   <small class="persian-plum d-none d-lg-inline-block">◦</small>

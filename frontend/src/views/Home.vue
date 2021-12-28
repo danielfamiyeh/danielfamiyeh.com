@@ -7,7 +7,7 @@
 
           <div class="col col-lg-8 h-100">
             <div class="row d-flex align-items-center h-100">
-              <div class="col no-border">
+              <div class="col no-border fade-in">
                 <h1 class="soft-dev">
                   SOFTWARE
                   <small class="persian-plum d-none d-lg-inline-block">◦</small>
@@ -22,13 +22,12 @@
         </div>
 
         <div class="row h-50 d-none d-lg-flex">
-          <!-- TODO: Make dynamic -->
-          <div class="bottom-left-img div-with-bg-img col col-lg-4 h-100" />
-
           <div
-            class="col bottom-right-img div-with-bg-img quote col-lg-4 h-100 d-flex flex-column align-items-center justify-content-center"
+            v-for="url in samplePhotos"
+            class="fade-in div-with-bg-img col col-lg-4 h-100"
+            :key="url"
+            :style="`background-image: url(${url})`"
           />
-          <div class="col bottom-center-img div-with-bg-img col-lg-4 h-100" />
         </div>
       </div>
 
@@ -42,10 +41,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import samplePhotos from '../assets/samplePhotos';
 
 export default defineComponent({
   name: 'Home',
-  data() {}
+  data() {
+    return { samplePhotos };
+  }
 });
 </script>
 
@@ -75,17 +77,5 @@ export default defineComponent({
   .col .no-border {
     border: none;
   }
-}
-
-.bottom-left-img {
-  background-image: url('../assets/photo/nomi_cropped.jpg');
-}
-
-.bottom-center-img {
-  background-image: url('../assets/photo/maisiebw1.jpg');
-}
-
-.bottom-right-img {
-  background-image: url('../assets/photo/micro.jpg');
 }
 </style>

@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="photos container h-75"
-    :style="{
-      'pointer-events': pointerEvents ? 'auto' : 'none'
-    }"
-  >
+  <div class="photos container h-75">
     <div class="row h-100">
       <div class="col col-lg-9 h-100 page-box box-shadow">
         <div class="row h-50">
@@ -21,12 +16,7 @@
               :baseImageUrl="baseImageUrl"
             />
 
-            <photo-set
-              @toggleModal="onTogglePointerEvents"
-              v-else
-              :photoSet="img"
-              :baseImageUrl="baseImageUrl"
-            />
+            <photo-set v-else :photoSet="img" :baseImageUrl="baseImageUrl" />
           </div>
         </div>
       </div>
@@ -75,13 +65,8 @@ export default defineComponent({
     return {
       allPhotos: [],
       allPhotoSets: [],
-      baseImageUrl: process.env.VUE_APP_S3_BUCKET,
-      pointerEvents: true
+      baseImageUrl: process.env.VUE_APP_S3_BUCKET
     };
-  },
-
-  methods: {
-    onTogglePointerEvents(evt: boolean) {}
   }
 });
 </script>

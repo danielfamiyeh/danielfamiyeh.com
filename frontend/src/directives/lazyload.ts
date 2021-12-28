@@ -5,6 +5,7 @@
 export default {
   mounted(el: HTMLElement) {
     function loadImage() {
+      el.classList.add('fade-in');
       el.style.backgroundImage = `url(${el.dataset.url})`;
     }
 

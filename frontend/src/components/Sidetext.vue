@@ -1,5 +1,7 @@
 <template>
-  <div class="col-3 d-none d-lg-block vh-75">
+  <div
+    class="side-text-container vertical-scroll-in col-3 d-none d-lg-block vh-75"
+  >
     <h1 class="side-text" v-html="innerHtml" />
   </div>
 </template>
@@ -14,6 +16,10 @@ export default defineComponent({
 </script>
 
 <style>
+.side-text-container {
+  overflow-x: hidden;
+}
+
 .side-text {
   margin-top: 51vh;
   margin-left: 5vw;

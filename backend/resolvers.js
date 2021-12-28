@@ -5,6 +5,8 @@ module.exports = {
   Query: {
     projects: async () => await Project.find({}),
     project: async (parent, args) => await Project.findOne({ _id: args.id }),
+    photos: async () => await Photo.find({}),
+    photoSets: async () => await PhotoSet.find({})
   },
 
   Mutation: {
@@ -15,7 +17,7 @@ module.exports = {
         description,
         features,
         socials,
-        skills,
+        skills
       });
 
       try {
@@ -25,9 +27,30 @@ module.exports = {
       }
     },
 
+    updateProject: async (parent, args) => {
+      const { id, modifiers } = args;
+
+      try {
+        const project = await Project.findOneAndUpdate({ _id: id }, modifiers);
+        return project;
+      } catch (error) {
+        return { error: error.toString() };
+      }
+    },
+
+    removeProject: async (parent, args) => {
+      const { id } = args;
+      try {
+        const project = await Project.findOne({ _id: id });
+        await project.remove();
+      } catch (error) {
+        return { error: error.toString() };
+      }
+    },
+
     addPhoto: async (parent, args) => {
-      const { caption, url } = args;
-      const photo = new Photo({ caption, url });
+      const { caption, file } = args;
+      const photo = new Photo({ caption, file });
 
       try {
         return await photo.save();
@@ -37,14 +60,14 @@ module.exports = {
     },
 
     addPhotoSet: async (parent, args) => {
-      const { title, photos } = args;
-      const photoSet = new PhotoSet({ title, photos });
+      const { title, files } = args;
+      const photoSet = new PhotoSet({ title, files });
 
       try {
         return await photoSet.save();
       } catch (error) {
         return { error: error.toString() };
       }
-    },
-  },
+    }
+  }
 };

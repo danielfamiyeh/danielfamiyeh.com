@@ -1,9 +1,26 @@
 <template>
   <div class="photos container h-75">
     <div class="row h-100">
-      <div class="col col-lg-9 h-100 box-shadow">
+      <div class="col col-lg-9 h-100 page-box box-shadow">
         <div class="row h-50">
-          <page-title :innerHtml="{ top: 'PHO', bottom: 'TOS' }" />
+          <div
+            v-for="img in [...allPhotos, allPhotoSets].sort(
+              (a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded)
+            )"
+            :key="img.dateUploaded"
+            class="col-xs-12 col-lg-4 h-100"
+          >
+            <photo
+              v-if="img.__typename === 'Photo'"
+              :image="img"
+              :baseImgUrl="baseImgUrl"
+            />
+
+            <div
+              v-else
+              class="h-100 d-flex align-items-center justify-content-center"
+            />
+          </div>
         </div>
       </div>
 
@@ -15,9 +32,36 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import gql from 'graphql-tag';
+import { defineComponent, onMounted } from 'vue';
 
-export default defineComponent({});
+import Photo from '../components/Photo.vue';
+
+export default defineComponent({
+  name: 'Photos',
+  components: { Photo },
+  apollo: {
+    allPhotos: gql`
+      query {
+        allPhotos: photos {
+          file
+          caption
+          dateUploaded
+        }
+      }
+    `
+  },
+
+  data() {
+    return {
+      allPhotos: [],
+      allPhotoSets: [],
+      baseImgUrl: process.env.VUE_APP_S3_BUCKET
+    };
+  },
+
+  setup() {}
+});
 </script>
 
 <style>

@@ -4,6 +4,8 @@ module.exports = {
   typeDefs: gql`
     ######## SCHEMAS ########
 
+    scalar Date
+
     type Project {
       id: ID!
       name: String
@@ -19,30 +21,42 @@ module.exports = {
     }
 
     type Photo {
-      url: String
+      file: String!
       caption: String
+      dateUploaded: Date
     }
 
     type PhotoSet {
       title: String
-      photos: Photo
+      files: [String]
     }
 
     type Query {
       projects: [Project]
       project(id: String): Project
+
+      photos: [Photo]
+      photoSets: [PhotoSet]
     }
 
     ######## MUTATIONS ########
 
-    input PhotoInput {
-      url: String
-      caption: String
+    input ProjectInput {
+      name: String
+      description: String
+      features: [String]
+      skills: [String]
+      socials: [SocialLinkInput]
     }
 
     input SocialLinkInput {
       site: String
       url: String
+    }
+
+    input PhotoInput {
+      file: String
+      caption: String
     }
 
     type Mutation {
@@ -54,11 +68,21 @@ module.exports = {
         skills: [String]
       ): Project
 
+      updateProject(id: ID, modifiers: ProjectInput): Project
+
       removeProject(id: ID): ID
 
-      addPhoto(url: String, caption: String): Photo
+      addPhoto(file: String, caption: String): Photo
 
-      addPhotoSet(title: String, photos: [PhotoInput]): PhotoSet
+      updatePhoto(id: ID, modifiers: PhotoInput): Photo
+
+      removePhoto(id: ID): ID
+
+      addPhotoSet(title: String, files: [String]): PhotoSet
+
+      update(id: ID, photos: [PhotoInput]): PhotoSet
+
+      remove(id: ID): ID
     }
-  `,
+  `
 };

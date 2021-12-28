@@ -22,12 +22,13 @@
         </div>
 
         <div class="row h-50 d-none d-lg-flex">
-          <div class="bottom-left-img col col-lg-4 h-100" />
+          <!-- TODO: Make dynamic -->
+          <div class="bottom-left-img div-with-bg-img col col-lg-4 h-100" />
 
           <div
-            class="col bottom-right-img quote col-lg-4 h-100 d-flex flex-column align-items-center justify-content-center"
+            class="col bottom-right-img div-with-bg-img quote col-lg-4 h-100 d-flex flex-column align-items-center justify-content-center"
           />
-          <div class="col bottom-center-img col-lg-4 h-100" />
+          <div class="col bottom-center-img div-with-bg-img col-lg-4 h-100" />
         </div>
       </div>
 
@@ -43,7 +44,8 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Home'
+  name: 'Home',
+  data() {}
 });
 </script>
 
@@ -77,22 +79,13 @@ export default defineComponent({
 
 .bottom-left-img {
   background-image: url('../assets/photo/nomi_cropped.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .bottom-center-img {
   background-image: url('../assets/photo/maisiebw1.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .bottom-right-img {
   background-image: url('../assets/photo/micro.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 </style>

@@ -36,10 +36,29 @@ export default defineComponent({
 }
 
 :root {
+  /* Main colors */
   --pale-gray: #dac4c4;
   --persian-plum: #d10829;
   --rose-taupe: #855a5c;
   --bg-main: #111;
+
+  /* Scrollbar colors*/
+  --scrollbar-thumb: #8f0018;
+  --scrollbar-thumb-hover: #6b0012;
+}
+
+::-webkit-scrollbar {
+  box-shadow: inset 0 0 5px rgb(64, 64, 64);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 body {

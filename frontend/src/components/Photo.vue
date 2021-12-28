@@ -1,7 +1,8 @@
 <template>
   <div
     class="div-with-bg-img photoblog-img h-100"
-    :style="`background-image: url(${baseImageUrl}/${image.file}.jpg);`"
+    v-lazyload
+    :data-url="`${baseImageUrl}/${image.file}.jpg`"
   >
     <caption
       class="h-100 w-100 d-flex align-items-center justify-content-center"
@@ -33,7 +34,6 @@ export default defineComponent({
     baseImageUrl: String
   },
   components: { PhotoModal },
-  computed: {},
   data() {
     return {
       showModal: false

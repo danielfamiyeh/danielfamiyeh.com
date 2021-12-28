@@ -1,10 +1,9 @@
 <template>
   <div
     v-if="setLength"
+    v-lazyload
     class="photoblog-photo-set div-with-bg-img h-100"
-    :style="`background-image: url(${baseImageUrl}/${
-      photoSet.files[photoSet.cover]
-    }.jpg)`"
+    :data-url="`${baseImageUrl}/${photoSet.files[photoSet.cover]}.jpg`"
   >
     <div
       class="count-container d-flex align-items-center justify-content-center w-100 h-100"
@@ -67,8 +66,8 @@ export default defineComponent({
   color: white;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35)
   );
 }
 

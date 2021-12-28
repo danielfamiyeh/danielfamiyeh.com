@@ -3,6 +3,7 @@ import App from './App.vue';
 
 import router from './router';
 import { registerComponents } from '@/components';
+import { registerDirectives } from '@/directives';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -15,7 +16,10 @@ const app = createApp({
 });
 
 registerComponents(app);
+registerDirectives(app);
 
 app.use(router);
 app.use(apolloProvider);
 app.mount('#app');
+
+console.log(app);

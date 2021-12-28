@@ -1,26 +1,18 @@
 <template>
   <div class="h-100">
-    <div id="nav">
-      <span v-for="(route, i) in routes" :key="route.name">
-        <router-link :to="route.path">{{ route.name }} </router-link>
-        <span v-if="i !== routes.length - 1"> | </span>
-      </span>
-    </div>
+    <navbar />
     <router-view />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { routes } from '@/router';
+
+import Navbar from './components/Navbar.vue';
 
 export default defineComponent({
   name: 'App',
-  data() {
-    return {
-      routes
-    };
-  }
+  components: { Navbar }
 });
 </script>
 
@@ -61,8 +53,31 @@ export default defineComponent({
   background: var(--scrollbar-thumb-hover);
 }
 
+a {
+  transition: color 0.15s ease-in-out;
+}
+
 body {
   background: var(--bg-main) !important;
+}
+
+button {
+  color: var(--persian-plum);
+  background: none;
+  border: none;
+}
+
+button:hover {
+  color: var(--rose-taupe);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Vidaloka;
 }
 
 /* Animations */
@@ -129,25 +144,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Vidaloka;
-}
-
-button {
-  color: var(--persian-plum);
-  background: none;
-  border: none;
-}
-
-button:hover {
-  color: var(--rose-taupe);
 }
 
 #nav {

@@ -13,12 +13,9 @@
       <div
         class="h-75 d-flex flex-column align-items-center justify-content-center"
       >
-        <button
-          class="close-btn fas fa-times"
-          @click="this.$emit('closeModal', true)"
-        />
+        <button class="close-btn fas fa-times" @click="onCloseModal()" />
         <img
-          class="w-75"
+          class="h-100"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}.jpg`"
         />
       </div>
@@ -64,6 +61,11 @@ export default defineComponent({
       } else if (incr < 0 && this.photoIndex > 0) {
         this.photoIndex--;
       }
+    },
+
+    onCloseModal() {
+      this.$emit('closeModal', true);
+      this.photoIndex = 0;
     }
   }
 });
@@ -76,6 +78,7 @@ export default defineComponent({
   z-index: 2;
   background: rgba(0, 0, 0, 0.7);
   cursor: auto;
+  animation: fadeInAnim 0.35s ease-in;
 }
 
 .p-modal button {

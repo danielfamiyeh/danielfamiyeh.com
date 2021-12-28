@@ -21,5 +21,3 @@ registerDirectives(app);
 app.use(router);
 app.use(apolloProvider);
 app.mount('#app');
-
-console.log(app);

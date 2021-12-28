@@ -105,4 +105,10 @@ h6 {
 .box-shadow {
   box-shadow: 10px 20px;
 }
+
+.div-with-bg-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 </style>

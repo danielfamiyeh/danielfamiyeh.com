@@ -14,10 +14,13 @@
         class="h-75 d-flex flex-column align-items-center justify-content-center"
       >
         <button class="close-btn fas fa-times" @click="onCloseModal()" />
+
         <img
-          class="h-100"
+          class="h-75"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}.jpg`"
         />
+
+        <b class="h4" style="color: white">{{ photoSet.title }} </b>
       </div>
     </div>
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">

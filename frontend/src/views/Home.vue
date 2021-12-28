@@ -53,6 +53,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
+// @ts-ignore
 import samplePhotos from '../assets/samplePhotos';
 
 export default defineComponent({

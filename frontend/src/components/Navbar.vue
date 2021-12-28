@@ -33,4 +33,8 @@ export default defineComponent({
 #nav a.router-link-exact-active {
   color: var(--persian-plum);
 }
+
+#nav a:hover {
+  color: var(--rose-taupe);
+}
 </style>

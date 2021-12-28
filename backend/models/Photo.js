@@ -12,6 +12,10 @@ const photoSchema = new Schema({
 const photoSetSchema = new Schema({
   title: String,
   files: [String],
+  cover: {
+    type: Number,
+    default: 0
+  },
   dateUploaded: {
     type: String,
     default: new Date().toISOString()

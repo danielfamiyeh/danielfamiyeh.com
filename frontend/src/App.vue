@@ -66,6 +66,7 @@ body {
   color: var(--pale-gray);
   width: 100vw;
   height: 100vh;
+  overflow-y: hidden;
 }
 
 h1,
@@ -75,6 +76,16 @@ h4,
 h5,
 h6 {
   font-family: Vidaloka;
+}
+
+button {
+  color: var(--persian-plum);
+  background: none;
+  border: none;
+}
+
+button:hover {
+  color: var(--rose-taupe);
 }
 
 #nav {

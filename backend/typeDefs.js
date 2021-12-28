@@ -29,6 +29,7 @@ module.exports = {
     type PhotoSet {
       title: String
       files: [String]
+      cover: Int
       dateUploaded: Date
     }
 

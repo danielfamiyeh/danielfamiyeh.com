@@ -13,7 +13,7 @@
               v-if="projectNo > 0"
               class="fas fa-chevron-left"
               @click="changeProject(-1)"
-            ></button>
+            />
           </div>
 
           <div class="col col-xs-12 col-lg-6 h-100 no-border">
@@ -112,14 +112,7 @@ export default defineComponent({
 
 <style scoped>
 button {
-  color: var(--persian-plum);
   font-size: 1.5rem;
-  background: none;
-  border: none;
-}
-
-button:hover {
-  color: var(--rose-taupe);
 }
 
 i {

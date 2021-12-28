@@ -2,32 +2,56 @@
   <div
     v-if="setLength"
     class="photoblog-photo-set div-with-bg-img h-100"
-    :style="`background-image: url(${baseImageUrl}/${photoSet.files[0]}.jpg)`"
+    :style="`background-image: url(${baseImageUrl}/${
+      photoSet.files[photoSet.cover]
+    }.jpg)`"
   >
     <div
       class="count-container d-flex align-items-center justify-content-center w-100 h-100"
+      @click="onToggleModal(true)"
     >
       <span class="h3 count">
         {{ setLength }}
       </span>
     </div>
+
+    <photo-modal
+      :show="showModal"
+      :photoSet="photoSet"
+      :baseImageUrl="baseImageUrl"
+      @closeModal="onToggleModal(false)"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import PhotoModal from '../components/PhotoModal.vue';
+
 export default defineComponent({
   props: {
     photoSet: Object,
     baseImageUrl: String
   },
+  components: { PhotoModal },
   setup() {},
   computed: {
     setLength() {
-      const { photoSet } = this.$props;
+      const { photoSet = {} } = this.$props;
       const set = photoSet.files || [];
       return set.length;
+    }
+  },
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    onToggleModal(state: boolean) {
+      this.$emit('toggleModal', state);
+      this.$data.showModal = state;
     }
   }
 });

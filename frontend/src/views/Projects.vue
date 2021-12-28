@@ -1,8 +1,8 @@
 <template>
   <div class="projects-page container h-75">
-    <div v-if="allProjects.length" class="row h-100">
+    <div class="row h-100">
       <div class="col box-shadow col-lg-9 h-100">
-        <div class="row h-50">
+        <div v-if="allProjects.length" class="row h-50">
           <page-title
             :innerHtml="{ top: 'PRO', bottom: `00${projectNo + 1}` }"
           />
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <div class="row h-50 d-none d-lg-flex">
+        <div v-if="allProjects.length" class="row h-50 d-none d-lg-flex">
           <div class="col bottom-center bottom-center col-lg-4 h-100">
             <unordered-list
               :items="allProjects[projectNo].skills"

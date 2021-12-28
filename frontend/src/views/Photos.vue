@@ -9,11 +9,11 @@
       <div class="col col-lg-9 h-100 page-box box-shadow">
         <div class="row h-50">
           <div
-            v-for="img in [...allPhotos, ...allPhotoSets].sort(
+            v-for="(img, i) in [...allPhotos, ...allPhotoSets].sort(
               (a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded)
             )"
-            :key="img.dateUploaded"
-            class="col-xs-12 col-lg-4 h-100"
+            :key="`${img.dateUploaded}-${i}`"
+            class="col-xs-12 col-lg-4 h-100 mb-4"
           >
             <photo
               v-if="img.__typename === 'Photo'"

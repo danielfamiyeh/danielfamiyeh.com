@@ -41,7 +41,6 @@ export default defineComponent({
   },
   methods: {
     onToggleModal(state: boolean) {
-      this.$emit('toggleModal', state);
       this.$data.showModal = state;
     }
   }

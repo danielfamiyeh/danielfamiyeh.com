@@ -65,16 +65,59 @@ body {
   background: var(--bg-main) !important;
 }
 
-.pale-grey {
-  color: var(--pale-gray);
+/* Animations */
+@keyframes fadeInAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-.persian-plum {
-  color: var(--persian-plum);
+@keyframes horizontalScrollInAnim {
+  0% {
+    max-width: 0%;
+  }
+
+  100% {
+    max-width: 200%;
+  }
 }
 
-.italic {
-  font-style: italic;
+@keyframes verticalScrollInAnim {
+  0% {
+    max-height: 0%;
+  }
+
+  100% {
+    max-height: 200%;
+  }
+}
+
+@keyframes fadeInAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.horizontal-scroll-in {
+  animation: horizontalScrollInAnim 1.5s ease-in;
+  overflow-x: hidden;
+}
+
+.vertical-scroll-in {
+  animation: verticalScrollInAnim 1.5s ease-in;
+  overflow-y: hidden;
+}
+
+.fade-in {
+  animation: fadeInAnim 1s ease-in;
 }
 
 #app {
@@ -118,6 +161,18 @@ button:hover {
 
 #nav a.router-link-exact-active {
   color: var(--persian-plum);
+}
+
+.pale-grey {
+  color: var(--pale-gray);
+}
+
+.persian-plum {
+  color: var(--persian-plum);
+}
+
+.italic {
+  font-style: italic;
 }
 
 .stroke-white {

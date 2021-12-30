@@ -1,6 +1,7 @@
 # danielfamiyeh.com
 
-Software portfolio and photography blog SPA, built with Vue 3, Apollo GraphQL & MongoDB.
+Software portfolio and photography blog SPA.<br/>
+Built with Vue 3, Apollo GraphQL & MongoDB.<br/>Deployed to an AWS EC2 instance.
 
 ## Project setup
 

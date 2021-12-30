@@ -80,6 +80,12 @@ h6 {
   font-family: Vidaloka;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
 /* Animations */
 @keyframes fadeInAnim {
   0% {

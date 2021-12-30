@@ -1,5 +1,9 @@
 <template>
-  <div v-show="show" class="p-modal row position-fixed w-100 h-100">
+  <div
+    v-show="show"
+    @contextmenu="() => false"
+    class="p-modal row position-fixed w-100 h-100"
+  >
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
       <button
         v-if="photoIndex > 0"

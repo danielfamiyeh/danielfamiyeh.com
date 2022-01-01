@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { routes } from '../router';
+import { routes } from '../../router';
 
 export default defineComponent({
   name: 'Navbar',

@@ -25,7 +25,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import PhotoModal from '../components/PhotoModal.vue';
+import PhotoModal from './PhotoModal.vue';
 
 export default defineComponent({
   name: 'Photo',

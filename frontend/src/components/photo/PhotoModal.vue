@@ -6,6 +6,7 @@
   >
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
       <btn
+        v-if="setLength > 1"
         :clickable="photoIndex > 0"
         class="fas fa-chevron-left"
         @click="changeModalPhoto(-1)"
@@ -34,6 +35,7 @@
     </div>
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
       <btn
+        v-if="setLength > 1"
         :clickable="photoIndex < setLength - 1"
         style="font-size: 2rem"
         class="fas fa-chevron-right"

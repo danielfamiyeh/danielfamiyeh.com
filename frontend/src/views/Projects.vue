@@ -131,7 +131,7 @@ import gql from 'graphql-tag';
 import { defineComponent } from 'vue';
 
 import Sidetext from '../components/Sidetext.vue';
-import UnorderedList from '../components/UnorderedList.vue';
+import UnorderedList from '../components/dom/UnorderedList.vue';
 
 export default defineComponent({
   name: 'About',

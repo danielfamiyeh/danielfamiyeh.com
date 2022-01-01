@@ -1,12 +1,14 @@
 import Vue from 'vue';
 
+import SocialLink from './SocialLink.vue';
 import PageTitle from './PageTitle.vue';
 import SideText from './Sidetext.vue';
-import UnorderedList from './UnorderedList.vue';
 import Spinner from './Spinner.vue';
-import Photo from './Photo.vue';
-import Button from './Button.vue';
-import SocialLink from './SocialLink.vue';
+
+import UnorderedList from './dom/UnorderedList.vue';
+import Button from './dom/Button.vue';
+
+import Photo from './photo/Photo.vue';
 
 const comps = [
   PageTitle,

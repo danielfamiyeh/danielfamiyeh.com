@@ -18,7 +18,10 @@ mongoose.connection.once('open', () => {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers: { ...scalars, Query, Mutation }
+  resolvers: { ...scalars, Query, Mutation },
+  context: () => {
+    return { token: process.env.AUTH_TOKEN || '' };
+  }
 });
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);

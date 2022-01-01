@@ -35,11 +35,15 @@
 
         <div class="row h-50 d-none d-lg-flex">
           <div
+            class="sample-photo-container p-2 col col-lg-4 h-100"
             v-for="url in samplePhotos"
-            class="fade-in div-with-bg-img col col-lg-4 h-100"
             :key="url"
-            :style="`background-image: url(${url})`"
-          />
+          >
+            <div
+              class="fade-in div-with-bg-img h-100"
+              :style="`background-image: url(${url})`"
+            />
+          </div>
         </div>
       </div>
 
@@ -91,6 +95,10 @@ export default defineComponent({
   cursor: pointer;
   text-decoration: none !important;
   color: var(--persian-plum) !important;
+}
+
+.home-page .div-with-bg-img {
+  border-radius: 0.7rem;
 }
 
 .home-page .contact-link:hover {

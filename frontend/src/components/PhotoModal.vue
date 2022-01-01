@@ -21,6 +21,7 @@
 
         <img
           class="h-75"
+          style="border-radius: 0.5rem"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}`"
         />
 

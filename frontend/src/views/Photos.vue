@@ -93,4 +93,8 @@ export default defineComponent({
 .photos-page .page-box {
   overflow-y: auto;
 }
+
+.photos-page .row .h-100 {
+  border-radius: 0.5rem;
+}
 </style>

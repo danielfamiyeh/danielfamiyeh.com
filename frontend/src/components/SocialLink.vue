@@ -1,6 +1,6 @@
 <template>
   <a
-    :class="`${className} ${faClass}`"
+    :class="`social-link ${className} ${faClass}`"
     :href="to"
     target="_blank"
     rel="noreferrer noopener"
@@ -52,4 +52,14 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.social-link {
+  cursor: pointer;
+  text-decoration: none !important;
+  color: var(--persian-plum) !important;
+}
+
+.social-link:hover {
+  color: var(--rose-taupe) !important;
+}
+</style>

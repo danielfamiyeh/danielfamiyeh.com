@@ -18,7 +18,7 @@
                 <div class="d-flex align-items-center justify-content-evenly">
                   <span v-for="type in Object.keys(contactInfo)" :key="type">
                     <social-link
-                      class="contact-link fa-2x"
+                      class="fa-2x"
                       :type="type"
                       :to="contactInfo[type]"
                     />
@@ -89,17 +89,7 @@ export default defineComponent({
   user-select: none;
 }
 
-.home-page .contact-link {
-  cursor: pointer;
-  text-decoration: none !important;
-  color: var(--persian-plum) !important;
-}
-
 .home-page .div-with-bg-img {
   border-radius: 0.7rem;
-}
-
-.home-page .contact-link:hover {
-  color: var(--rose-taupe) !important;
 }
 </style>

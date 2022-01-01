@@ -92,19 +92,20 @@
             />
           </div>
 
+          <div class="col col-lg-4 p-3">
+            <div
+              v-if="currentProject"
+              class="div-with-bg-img h-100"
+              :style="`background: url(${baseImageUrl}/project-screenshots/${lowerCaseName}/${currentProject.previewImage})`"
+            />
+          </div>
+
           <div class="col bottom-center bottom-center col-lg-4 h-100">
             <unordered-list
               v-if="currentProject"
               :items="currentProject.skills"
               itemClass="h5"
               listClass="flex-column"
-            />
-          </div>
-
-          <div class="col col-lg-4 p-3">
-            <div
-              class="div-with-bg-img h-100"
-              :style="`background: url(${baseImageUrl}/project-screenshots/${lowerCaseName}/code_${lowerCaseName}_1.jpg)`"
             />
           </div>
         </div>
@@ -142,6 +143,7 @@ export default defineComponent({
           id
           name
           description
+          previewImage
           skills
           features
           socials {
@@ -208,8 +210,9 @@ export default defineComponent({
 }
 
 .projects-page .div-with-bg-img {
-  filter: grayscale(0.7) blur(0.05rem);
+  filter: grayscale(0.7);
   border-radius: 0.5rem;
+  background-size: contain !important;
 }
 
 .projects-page .mobile-view {

@@ -10,6 +10,7 @@ module.exports = {
       id: ID!
       name: String
       description: String
+      previewImage: String
       features: [String]
       skills: [String]
       socials: [SocialLink]
@@ -46,6 +47,7 @@ module.exports = {
     input ProjectInput {
       name: String
       description: String
+      previewImage: String
       features: [String]
       skills: [String]
       socials: [SocialLinkInput]

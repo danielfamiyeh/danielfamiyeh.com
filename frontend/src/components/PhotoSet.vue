@@ -3,7 +3,7 @@
     v-if="setLength"
     v-lazyload
     class="photoblog-photo-set div-with-bg-img h-100"
-    :data-url="`${baseImageUrl}/${photoSet.files[photoSet.cover]}.jpg`"
+    :data-url="`${baseImageUrl}/photo-blog/${photoSet.files[photoSet.cover]}`"
   >
     <div
       class="multiple-container d-flex align-items-center justify-content-center w-100 h-100"

@@ -6,9 +6,6 @@ import { registerComponents } from '@/components';
 import { registerDirectives } from '@/directives';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-console.log(process.env);
 
 import { apolloProvider } from './services/apollo';
 const app = createApp({

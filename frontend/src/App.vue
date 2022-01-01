@@ -109,7 +109,12 @@ img {
 
 @keyframes verticalScrollInAnim {
   0% {
+    opacity: 0;
     max-height: 0%;
+  }
+
+  75% {
+    opacity: 1;
   }
 
   100% {

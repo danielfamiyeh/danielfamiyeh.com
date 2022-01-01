@@ -59,10 +59,10 @@
           class="row mt-5 controls-mobile-view d-flex d-lg-none justify-content-evenly fade-in"
         >
           <div v-if="projectNo > 0" class="col">
-            <button @click="changeProject(-1)">Prev.</button>
+            <btn @click="changeProject(-1)" content="Prev." />
           </div>
           <div v-if="projectNo !== allProjects.length - 1" class="col">
-            <button @click="changeProject(1)">Next</button>
+            <btn @click="changeProject(1)" content="Next" />
           </div>
         </div>
 

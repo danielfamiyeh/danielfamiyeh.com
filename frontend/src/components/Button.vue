@@ -2,11 +2,11 @@
   <button
     ref="btn"
     :class="`my-btn ${className}`"
-    :style="`cursor: ${cursorState}; color: ${nonHoverColor}; ${style}`"
+    :style="`cursor: ${cursorState}; color: ${nonHoverColor}; ${style};`"
     @mouseover="this.$refs.btn.style.color = hoverColor"
     @mouseout="this.$refs.btn.style.color = nonHoverColor"
   >
-    <template v-html="content" />
+    <span v-html="content" />
   </button>
 </template>
 

@@ -21,7 +21,7 @@
 
         <img
           class="h-75"
-          :src="`${baseImageUrl}/${photoSet.files[photoIndex]}.jpg`"
+          :src="`${baseImageUrl}/${photoSet.files[photoIndex]}`"
         />
 
         <b class="h4" style="color: white">{{ photoSet.title }} </b>

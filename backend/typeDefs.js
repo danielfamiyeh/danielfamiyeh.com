@@ -66,6 +66,7 @@ module.exports = {
         name: String
         description: String
         features: [String]
+        photos: [String]
         socials: [SocialLinkInput]
         skills: [String]
       ): Project

@@ -2,7 +2,13 @@
   <div class="photos container h-75">
     <div class="row h-100">
       <div class="col col-lg-9 h-100 page-box box-shadow">
-        <div class="row h-50 fade-in">
+        <div
+          v-if="
+            !$apollo.queries.allPhotos.loading &&
+            !$apollo.queries.allPhotoSets.loading
+          "
+          class="row h-50 fade-in"
+        >
           <div
             v-for="(img, i) in [...allPhotos, ...allPhotoSets].sort(
               (a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded)
@@ -13,11 +19,23 @@
             <photo
               v-if="img.__typename === 'Photo'"
               :image="img"
-              :baseImageUrl="baseImageUrl"
+              :baseImageUrl="`${baseImageUrl}/photo-blog`"
             />
 
-            <photo-set v-else :photoSet="img" :baseImageUrl="baseImageUrl" />
+            <photo-set
+              v-else
+              :photoSet="img"
+              :baseImageUrl="`${baseImageUrl}/photo-blog`"
+            />
           </div>
+        </div>
+
+        <div
+          v-else
+          class="row h-100 d-flex flex-column align-items-center justify-content-center"
+        >
+          <spinner :size="2" />
+          <p class="mt-2">Loading Projects</p>
         </div>
       </div>
 

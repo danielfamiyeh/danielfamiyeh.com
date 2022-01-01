@@ -6,7 +6,7 @@ const projectSchema = new Schema({
   description: String,
   socials: [{ site: String, url: String }],
   features: [String],
-  skills: [String],
+  skills: [String]
 });
 
 module.exports = mongoose.model('Project', projectSchema);

@@ -17,14 +17,10 @@
                 <h1 class="d-xs-block d-lg-none mb-5">PHOTOGRAPHER</h1>
                 <div class="d-flex align-items-center justify-content-evenly">
                   <span v-for="type in Object.keys(contactInfo)" :key="type">
-                    <a
-                      :class="
-                        type === 'email' ? 'fas fa-envelope' : `fab fa-${type}`
-                      "
-                      :href="contactInfo[type]"
-                      target="_blank"
-                      rel="noreferrer noopener"
+                    <social-link
                       class="contact-link fa-2x"
+                      :type="type"
+                      :to="contactInfo[type]"
                     />
                   </span>
                 </div>
@@ -60,8 +56,10 @@ import { defineComponent } from 'vue';
 
 // @ts-ignore
 import samplePhotos from '../assets/samplePhotos';
+import SocialLink from '../components/SocialLink.vue';
 
 export default defineComponent({
+  components: { SocialLink },
   name: 'Home',
   setup() {
     const { VUE_APP_CONTACT_INFO: contactInfo = '{}' } = process.env;

@@ -6,15 +6,25 @@ import UnorderedList from './UnorderedList.vue';
 import Spinner from './Spinner.vue';
 import Photo from './Photo.vue';
 import Button from './Button.vue';
+import SocialLink from './SocialLink.vue';
 
-const comps = [PageTitle, SideText, UnorderedList, Spinner, Photo, Button];
+const comps = [
+  PageTitle,
+  SideText,
+  UnorderedList,
+  Spinner,
+  Photo,
+  Button,
+  SocialLink
+];
 const names = [
   'page-title',
   'sidetext',
   'unordered-list',
   'spinner',
   'photo',
-  'btn'
+  'btn',
+  'social-link'
 ];
 
 export const registerComponents = (app: Vue.App) => {

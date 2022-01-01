@@ -1,7 +1,7 @@
 <template>
   <div class="projects-page container h-75">
-    <div class="row h-100">
-      <div class="col box-shadow col-lg-9 h-100">
+    <div class="row h-100 scroll">
+      <div ref="pageBox" class="col col-lg-9 h-100 page-box pb-5">
         <div v-if="!$apollo.queries.allProjects.loading" class="row h-50">
           <div
             class="col col-lg-1 no-border d-none d-lg-flex align-items-center justify-content-center fade-in"
@@ -37,17 +37,51 @@
         </div>
 
         <div
+          class="row mb-5 skills-mobile-view d-flex d-lg-none justify-content-center fade-in"
+        >
+          <h3 class="h4 mb-3">Skills</h3>
+          <unordered-list
+            :items="allProjects[projectNo].skills"
+            itemStyle="list-style-type: none;"
+          />
+        </div>
+
+        <div class="row features-mobile-view d-flex d-lg-none fade-in">
+          <h3 class="h4 mb-3">Features</h3>
+          <unordered-list
+            :items="allProjects[projectNo].features"
+            itemClass="h6"
+            listClass="flex-column p-5 pt-1"
+          />
+        </div>
+
+        <div
+          class="row mt-5 controls-mobile-view d-flex d-lg-none justify-content-evenly fade-in"
+        >
+          <div v-if="projectNo > 0" class="col">
+            <button @click="changeProject(-1)">Prev.</button>
+          </div>
+          <div v-if="projectNo !== allProjects.length - 1" class="col">
+            <button @click="changeProject(1)">Next</button>
+          </div>
+        </div>
+
+        <div
           v-if="!$apollo.queries.allProjects.loading"
           class="row h-50 d-none d-lg-flex fade-in"
         >
           <div class="col bottom-right col-lg-4 h-100">
-            <unordered-list :items="allProjects[projectNo].features" />
+            <unordered-list
+              :items="allProjects[projectNo].features"
+              listClass="flex-column"
+            />
           </div>
 
           <div class="col bottom-center bottom-center col-lg-4 h-100">
             <unordered-list
               :items="allProjects[projectNo].skills"
               itemClass="h5"
+              listClass="flex-column"
             />
           </div>
 
@@ -109,6 +143,9 @@ export default defineComponent({
 
   methods: {
     changeProject(incr) {
+      // Scroll to top of row on mobile view
+      this.$refs.pageBox.scrollTo(0, 0);
+
       if (incr > 0 && this.projectNo < this.allProjects.length) {
         this.projectNo++;
       } else if (incr < 0 && this.projectNo > 0) {
@@ -133,35 +170,33 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-button {
+<style>
+.projects-page button {
   font-size: 1.5rem;
 }
 
-i {
+.projects-page i {
   color: var(--persian-plum);
 }
 
-.inline-photographer {
+.projects-page .inline-photographer {
   user-select: none;
 }
 
-.box-shadow {
+.projects-page .box-shadow {
   box-shadow: 10px 20px;
 }
 
-.div-with-bg-img {
+.projects-page .div-with-bg-img {
   filter: grayscale(0.7) blur(0.05rem);
   border-radius: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
-  /* .col {
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-  } */
+.projects-page .mobile-view {
+  overflow-y: auto;
+}
 
-  .col .no-border {
-    border: none;
-  }
+.projects-page .page-box {
+  overflow-y: auto;
 }
 </style>

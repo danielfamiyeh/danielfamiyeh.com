@@ -1,7 +1,7 @@
 <template>
   <div class="home-page container h-75">
     <div class="row h-100">
-      <div class="col box-shadow col-lg-9 h-100">
+      <div class="col col-lg-9 h-100">
         <div class="row h-50">
           <page-title :innerHtml="{ top: 'DAN', bottom: 'FAM' }" />
 
@@ -85,12 +85,6 @@ export default defineComponent({
 
 .home-page .quote {
   user-select: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .home-page .col .no-border {
-    border: none;
-  }
 }
 
 .home-page .contact-link {

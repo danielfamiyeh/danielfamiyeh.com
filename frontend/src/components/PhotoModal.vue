@@ -5,7 +5,7 @@
     class="p-modal row position-fixed w-100 h-100"
   >
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
-      <button
+      <btn
         v-if="photoIndex > 0"
         class="fas fa-chevron-left"
         @click="changeModalPhoto(-1)"
@@ -17,10 +17,15 @@
       <div
         class="h-75 d-flex flex-column align-items-center justify-content-center"
       >
-        <button class="close-btn fas fa-times" @click="onCloseModal()" />
+        <btn
+          class="close-btn fas fa-times"
+          style="2rem"
+          @click="onCloseModal()"
+        />
 
         <img
           class="h-75"
+          style="border-radius: 0.5rem"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}`"
         />
 
@@ -28,8 +33,9 @@
       </div>
     </div>
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
-      <button
+      <btn
         v-if="photoIndex < setLength - 1"
+        style="font-size: 2rem"
         class="fas fa-chevron-right"
         @click="changeModalPhoto(1)"
       />

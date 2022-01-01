@@ -35,7 +35,7 @@
           class="row h-100 d-flex flex-column align-items-center justify-content-center"
         >
           <spinner :size="2" />
-          <p class="mt-2">Loading Projects</p>
+          <p class="mt-2">Loading Photos</p>
         </div>
       </div>
 
@@ -92,5 +92,9 @@ export default defineComponent({
 <style>
 .photos-page .page-box {
   overflow-y: auto;
+}
+
+.photos-page .row .h-100 {
+  border-radius: 0.5rem;
 }
 </style>

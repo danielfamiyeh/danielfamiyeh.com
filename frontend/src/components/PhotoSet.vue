@@ -54,6 +54,10 @@ export default defineComponent({
 </script>
 
 <style>
+.photoblog-photo-set {
+  border-radius: 0.5rem;
+}
+
 .photoblog-photo-set:hover {
   cursor: pointer;
 }

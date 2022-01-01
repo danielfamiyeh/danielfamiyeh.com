@@ -6,10 +6,10 @@
           <div
             class="col col-lg-1 no-border d-none d-lg-flex align-items-center justify-content-center fade-in"
           >
-            <button
-              v-if="projectNo > 0"
+            <btn
               class="fas fa-chevron-left"
-              @click="changeProject(-1)"
+              :clickable="projectNo > 0"
+              @click="projectNo > 0 && changeProject(-1)"
             />
           </div>
 
@@ -28,10 +28,10 @@
           <div
             class="col col-lg-1 no-border h-100 d-none d-lg-flex align-items-center justify-content-center fade-in"
           >
-            <button
-              v-if="projectNo !== allProjects.length - 1"
+            <btn
               class="fas fa-chevron-right"
-              @click="changeProject(1)"
+              :clickable="projectNo !== allProjects.length - 1"
+              @click="projectNo < allProjects.length - 1 && changeProject(1)"
             />
           </div>
         </div>
@@ -59,10 +59,10 @@
           class="row mt-5 controls-mobile-view d-flex d-lg-none justify-content-evenly fade-in"
         >
           <div v-if="projectNo > 0" class="col">
-            <button @click="changeProject(-1)">Prev.</button>
+            <btn @click="changeProject(-1)" content="Prev." />
           </div>
           <div v-if="projectNo !== allProjects.length - 1" class="col">
-            <button @click="changeProject(1)">Next</button>
+            <btn @click="changeProject(1)" content="Next" />
           </div>
         </div>
 
@@ -189,7 +189,7 @@ export default defineComponent({
 
 .projects-page .div-with-bg-img {
   filter: grayscale(0.7) blur(0.05rem);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .projects-page .mobile-view {

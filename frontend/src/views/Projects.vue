@@ -15,12 +15,24 @@
 
           <div class="col col-xs-12 col-lg-10 h-100 no-border fade-in">
             <div class="row d-flex align-items-center h-100">
-              <div class="col no-border">
+              <div class="col no-border" v-if="currentProject">
                 <h1 class="project-name">
-                  {{ allProjects[projectNo].name }}
-                  <hr />
+                  {{ currentProject.name }}
                 </h1>
-                <p>{{ allProjects[projectNo].description }}</p>
+                <hr />
+                <p>{{ currentProject.description }}</p>
+
+                <div
+                  class="links-container d-flex align-items-center justify-content-evenly"
+                >
+                  <social-link
+                    v-for="link in currentProject.socials"
+                    :key="link.site"
+                    :type="link.site"
+                    :to="link.url"
+                    class="fa-2x"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -41,7 +53,8 @@
         >
           <h3 class="h4 mb-3">Skills</h3>
           <unordered-list
-            :items="allProjects[projectNo].skills"
+            v-if="currentProject"
+            :items="currentProject.skills"
             itemStyle="list-style-type: none;"
           />
         </div>
@@ -49,7 +62,8 @@
         <div class="row features-mobile-view d-flex d-lg-none fade-in">
           <h3 class="h4 mb-3">Features</h3>
           <unordered-list
-            :items="allProjects[projectNo].features"
+            v-if="currentProject"
+            :items="currentProject.features"
             itemClass="h6"
             listClass="flex-column p-5 pt-1"
           />
@@ -72,14 +86,16 @@
         >
           <div class="col bottom-right col-lg-4 h-100">
             <unordered-list
-              :items="allProjects[projectNo].features"
+              v-if="currentProject"
+              :items="currentProject.features"
               listClass="flex-column"
             />
           </div>
 
           <div class="col bottom-center bottom-center col-lg-4 h-100">
             <unordered-list
-              :items="allProjects[projectNo].skills"
+              v-if="currentProject"
+              :items="currentProject.skills"
               itemClass="h5"
               listClass="flex-column"
             />
@@ -129,6 +145,7 @@ export default defineComponent({
           skills
           features
           socials {
+            site
             url
           }
         }
@@ -155,8 +172,11 @@ export default defineComponent({
   },
 
   computed: {
+    currentProject() {
+      return this.allProjects[this.projectNo];
+    },
     lowerCaseName() {
-      return (this.allProjects[this.projectNo].name || '').toLowerCase();
+      return (this.currentProject.name || '').toLowerCase();
     }
   },
 

@@ -6,7 +6,7 @@
   >
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
       <btn
-        v-if="photoIndex > 0"
+        :clickable="photoIndex > 0"
         class="fas fa-chevron-left"
         @click="changeModalPhoto(-1)"
       />
@@ -25,7 +25,7 @@
 
         <img
           class="h-75"
-          style="border-radius: 0.5rem"
+          style="border-radius: 0.5rem; position: relative"
           :src="`${baseImageUrl}/${photoSet.files[photoIndex]}`"
         />
 
@@ -34,7 +34,7 @@
     </div>
     <div class="col-2 h-100 d-flex align-items-center justify-content-center">
       <btn
-        v-if="photoIndex < setLength - 1"
+        :clickable="photoIndex < setLength - 1"
         style="font-size: 2rem"
         class="fas fa-chevron-right"
         @click="changeModalPhoto(1)"
@@ -96,5 +96,7 @@ export default defineComponent({
 
 .p-modal button {
   font-size: 2rem;
+  z-index: 2;
+  position: relative;
 }
 </style>

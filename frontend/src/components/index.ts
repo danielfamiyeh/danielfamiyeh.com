@@ -4,9 +4,10 @@ import PageTitle from './PageTitle.vue';
 import SideText from './Sidetext.vue';
 import UnorderedList from './UnorderedList.vue';
 import Spinner from './Spinner.vue';
+import Photo from './Photo.vue';
 
-const comps = [PageTitle, SideText, UnorderedList, Spinner];
-const names = ['page-title', 'sidetext', 'unordered-list', 'spinner'];
+const comps = [PageTitle, SideText, UnorderedList, Spinner, Photo];
+const names = ['page-title', 'sidetext', 'unordered-list', 'spinner', 'photo'];
 
 export const registerComponents = (app: Vue.App) => {
   comps.forEach((comp, i) => {

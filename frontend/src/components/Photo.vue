@@ -2,7 +2,7 @@
   <div
     class="div-with-bg-img photoblog-img h-100"
     v-lazyload
-    :data-url="`${baseImageUrl}/photo-blog/${image.file}`"
+    :data-url="`${baseImageUrl}/${image.file}`"
   >
     <caption
       class="h-100 w-100 d-flex align-items-center justify-content-center"

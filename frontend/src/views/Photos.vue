@@ -19,10 +19,14 @@
             <photo
               v-if="img.__typename === 'Photo'"
               :image="img"
-              :baseImageUrl="baseImageUrl"
+              :baseImageUrl="`${baseImageUrl}/photo-blog`"
             />
 
-            <photo-set v-else :photoSet="img" :baseImageUrl="baseImageUrl" />
+            <photo-set
+              v-else
+              :photoSet="img"
+              :baseImageUrl="`${baseImageUrl}/photo-blog`"
+            />
           </div>
         </div>
 

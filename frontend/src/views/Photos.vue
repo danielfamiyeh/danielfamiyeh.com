@@ -50,8 +50,8 @@
 import gql from 'graphql-tag';
 import { defineComponent } from 'vue';
 
-import Photo from '../components/Photo.vue';
-import PhotoSet from '../components/PhotoSet.vue';
+import Photo from '../components/photo/Photo.vue';
+import PhotoSet from '../components/photo/PhotoSet.vue';
 
 export default defineComponent({
   name: 'Photos',

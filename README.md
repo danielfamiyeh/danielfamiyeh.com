@@ -25,10 +25,12 @@ to start the GraphQL server.
 
 #### Environment Variables
 
-The backend uses an environment variable for the MongoDB URI. An example set-up is given below.
+The backend uses an environment variable for the MongoDB URI and an auth token for mutations.
+<br/>An example set-up is given below.
 
 ```
 MONGO_URI=mmongodb+srv://{USERNAME}:{PASSWORD}@{CLUSTER_URI}
+AUTH_TOKEN={TOKEN}
 ```
 
 ### Frontend

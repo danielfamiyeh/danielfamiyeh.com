@@ -1,7 +1,7 @@
 <template>
-  <div class="photos container h-75">
+  <div class="photos-page container h-75">
     <div class="row h-100">
-      <div class="col col-lg-9 h-100 page-box box-shadow">
+      <div class="col col-lg-9 h-100 page-box">
         <div
           v-if="
             !$apollo.queries.allPhotos.loading &&
@@ -90,7 +90,7 @@ export default defineComponent({
 </script>
 
 <style>
-.box-shadow {
+.photos-page .page-box {
   overflow-y: auto;
 }
 </style>

@@ -37,6 +37,9 @@ export default defineComponent({
   /* Scrollbar colors*/
   --scrollbar-thumb: #8f0018;
   --scrollbar-thumb-hover: #6b0012;
+
+  /* Button colors */
+  --unclickable: #636363;
 }
 
 ::-webkit-scrollbar {
@@ -59,16 +62,6 @@ a {
 
 body {
   background: var(--bg-main) !important;
-}
-
-button {
-  color: var(--persian-plum);
-  background: none;
-  border: none;
-}
-
-button:hover {
-  color: var(--rose-taupe);
 }
 
 h1,

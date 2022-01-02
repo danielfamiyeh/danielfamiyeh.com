@@ -12,10 +12,12 @@ module.exports = {
 
   Mutation: {
     addProject: async (parent, args, context) => {
-      const { name, description, features, socials, skills } = args;
+      const { name, description, previewImage, features, socials, skills } =
+        args;
       const project = new Project({
         name,
         description,
+        previewImage,
         features,
         socials,
         skills

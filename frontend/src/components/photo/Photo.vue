@@ -49,7 +49,7 @@ export default defineComponent({
 
 <style>
 .photoblog-img {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .photoblog-img:hover {

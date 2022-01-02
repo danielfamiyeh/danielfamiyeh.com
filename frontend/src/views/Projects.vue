@@ -220,7 +220,7 @@ export default defineComponent({
 
 .projects-page .div-with-bg-img {
   filter: grayscale(0.7);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   background-size: contain !important;
   background-repeat: round !important;
 }

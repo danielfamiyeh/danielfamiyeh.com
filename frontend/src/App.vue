@@ -195,5 +195,6 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border: 1px solid rgb(64, 64, 64);
 }
 </style>

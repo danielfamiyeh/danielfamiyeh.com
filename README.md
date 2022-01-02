@@ -1,7 +1,9 @@
 # danielfamiyeh.com
 
 Software portfolio and photography blog SPA.<br/>
-Built with Vue 3, Apollo GraphQL & MongoDB.<br/>Deployed to an AWS EC2 instance.
+Built with Vue 3, Apollo GraphQL & MongoDB.<br/>Deployed to an AWS EC2 instance.<br/>
+### [Live Website](https://danielfamiyeh.com/)<br/>
+![Screenshot](https://danielfamiyehcom.s3.eu-west-2.amazonaws.com/github-readme/home.jpg)
 
 ## Project setup
 

@@ -9,6 +9,7 @@
         v-if="setLength > 1"
         :clickable="photoIndex > 0"
         class="fas fa-chevron-left"
+        style="font-size: 2rem; z-index: 2; position: relative"
         @click="changeModalPhoto(-1)"
       />
     </div>
@@ -20,7 +21,7 @@
       >
         <btn
           class="close-btn fas fa-times"
-          style="2rem"
+          style="font-size: 2rem; z-index: 2; position: relative"
           @click="onCloseModal()"
         />
 
@@ -37,7 +38,7 @@
       <btn
         v-if="setLength > 1"
         :clickable="photoIndex < setLength - 1"
-        style="font-size: 2rem"
+        style="font-size: 2rem; z-index: 2; position: relative"
         class="fas fa-chevron-right"
         @click="changeModalPhoto(1)"
       />
@@ -94,11 +95,5 @@ export default defineComponent({
   background: rgba(0, 0, 0, 0.7);
   cursor: auto;
   animation: fadeInAnim 0.35s ease-in;
-}
-
-.p-modal button {
-  font-size: 2rem;
-  z-index: 2;
-  position: relative;
 }
 </style>

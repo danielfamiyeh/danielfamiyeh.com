@@ -41,6 +41,7 @@
 
       <sidetext
         innerHtml="P H O T O <i class='persian-plum'>◦</i><br /> B L O G"
+        font-size="5rem"
       />
     </div>
   </div>

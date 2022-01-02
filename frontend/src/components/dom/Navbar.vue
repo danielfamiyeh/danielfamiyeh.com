@@ -1,8 +1,10 @@
 <template>
   <div id="nav">
-    <span v-for="(route, i) in routes" :key="route.name">
-      <router-link :to="route.path">{{ route.name }} </router-link>
-      <span v-if="i !== routes.length - 1"> | </span>
+    <span class="pb-2 d-block" style="border-bottom: 1px solid grey">
+      <span v-for="(route, i) in routes" :key="route.name">
+        <router-link :to="route.path">{{ route.name }} </router-link>
+        <span v-if="i !== routes.length - 1"> | </span>
+      </span>
     </span>
   </div>
 </template>
@@ -28,6 +30,7 @@ export default defineComponent({
 #nav a {
   font-weight: bold;
   color: var(--pale-gray);
+  text-decoration: none !important;
 }
 
 #nav a.router-link-exact-active {

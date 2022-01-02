@@ -45,7 +45,7 @@
 
       <sidetext
         :innerHtml="/* pretter-disable */ `P H O T O <i class='persian-plum'>◦</i><br />G R A P H E R`"
-        font-size="5.5rem"
+        font-size="4.5rem"
       />
     </div>
   </div>
@@ -73,7 +73,7 @@ export default defineComponent({
 
 <style>
 .home-page .dan-fam h1 {
-  font-size: 8em;
+  font-size: 8rem;
   user-select: none;
 }
 

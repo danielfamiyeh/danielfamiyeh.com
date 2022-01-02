@@ -135,6 +135,7 @@
       <sidetext
         innerHtml="S I D E <i class='persian-plum'>◦</i><br />P R O J E C T
         S"
+        font-size="5rem"
       />
     </div>
   </div>

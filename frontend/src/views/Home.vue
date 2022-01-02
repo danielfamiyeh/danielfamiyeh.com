@@ -44,8 +44,8 @@
       </div>
 
       <sidetext
-        innerHtml="P H O T O <i class='persian-plum'>◦</i><br />G R A P H E
-        R"
+        :innerHtml="/* pretter-disable */ `P H O T O <i class='persian-plum'>◦</i><br />G R A P H E R`"
+        font-size="5.5rem"
       />
     </div>
   </div>
@@ -90,6 +90,6 @@ export default defineComponent({
 }
 
 .home-page .div-with-bg-img {
-  border-radius: 0.7rem;
+  border-radius: 0.3rem;
 }
 </style>

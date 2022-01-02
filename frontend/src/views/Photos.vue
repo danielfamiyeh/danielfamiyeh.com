@@ -95,6 +95,6 @@ export default defineComponent({
 }
 
 .photos-page .row .h-100 {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 </style>

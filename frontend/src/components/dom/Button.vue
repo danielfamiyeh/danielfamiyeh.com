@@ -2,7 +2,7 @@
   <button
     ref="btn"
     :class="`my-btn ${className}`"
-    :style="`cursor: ${cursorState}; color: ${nonHoverColor}; ${style};`"
+    :style="`cursor: ${cursorState}; color: ${nonHoverColor}; ${styleString};`"
     @mouseover="this.$refs.btn.style.color = hoverColor"
     @mouseout="this.$refs.btn.style.color = nonHoverColor"
   >
@@ -20,7 +20,7 @@ export default defineComponent({
       default: ''
     },
     style: {
-      type: String,
+      type: Object,
       default: ''
     },
     content: {
@@ -44,6 +44,13 @@ export default defineComponent({
 
     cursorState() {
       return this.clickable ? 'pointer' : 'auto';
+    },
+
+    styleString() {
+      return JSON.stringify(this.style)
+        .slice(1, -1)
+        .replace(/"/g, '')
+        .replace(/,/g, '; ');
     }
   }
 });

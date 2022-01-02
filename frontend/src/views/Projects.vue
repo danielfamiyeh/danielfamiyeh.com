@@ -8,6 +8,7 @@
           >
             <btn
               class="fas fa-chevron-left"
+              style="font-size: 1.5rem"
               :clickable="projectNo > 0"
               @click="projectNo > 0 && changeProject(-1)"
             />
@@ -42,6 +43,7 @@
           >
             <btn
               class="fas fa-chevron-right"
+              style="font-size: 1.5rem"
               :clickable="projectNo !== allProjects.length - 1"
               @click="projectNo < allProjects.length - 1 && changeProject(1)"
             />
@@ -73,10 +75,18 @@
           class="row mt-5 controls-mobile-view d-flex d-lg-none justify-content-evenly fade-in"
         >
           <div v-if="projectNo > 0" class="col">
-            <btn @click="changeProject(-1)" content="Prev." />
+            <btn
+              style="font-size: 1.5rem"
+              @click="changeProject(-1)"
+              content="Prev."
+            />
           </div>
           <div v-if="projectNo !== allProjects.length - 1" class="col">
-            <btn @click="changeProject(1)" content="Next" />
+            <btn
+              style="font-size: 1.5rem"
+              @click="changeProject(1)"
+              content="Next"
+            />
           </div>
         </div>
 
@@ -92,19 +102,23 @@
             />
           </div>
 
+          <div class="col col-lg-4 p-3">
+            <div
+              v-if="currentProject && currentProject.previewImage"
+              class="div-with-bg-img h-100"
+              :style="`background:
+            url(${baseImageUrl}/project-screenshots/${lowerCaseName
+                .split(' ')
+                .join('-')}/${currentProject.previewImage})`"
+            />
+          </div>
+
           <div class="col bottom-center bottom-center col-lg-4 h-100">
             <unordered-list
               v-if="currentProject"
               :items="currentProject.skills"
               itemClass="h5"
               listClass="flex-column"
-            />
-          </div>
-
-          <div class="col col-lg-4 p-3">
-            <div
-              class="div-with-bg-img h-100"
-              :style="`background: url(${baseImageUrl}/project-screenshots/${lowerCaseName}/code_${lowerCaseName}_1.jpg)`"
             />
           </div>
         </div>
@@ -142,6 +156,7 @@ export default defineComponent({
           id
           name
           description
+          previewImage
           skills
           features
           socials {
@@ -191,10 +206,6 @@ export default defineComponent({
 </script>
 
 <style>
-.projects-page button {
-  font-size: 1.5rem;
-}
-
 .projects-page i {
   color: var(--persian-plum);
 }
@@ -208,8 +219,10 @@ export default defineComponent({
 }
 
 .projects-page .div-with-bg-img {
-  filter: grayscale(0.7) blur(0.05rem);
+  filter: grayscale(0.7);
   border-radius: 0.5rem;
+  background-size: contain !important;
+  background-repeat: round !important;
 }
 
 .projects-page .mobile-view {

@@ -5,6 +5,7 @@
     :style="`cursor: ${cursorState}; color: ${nonHoverColor}; ${styleString};`"
     @mouseover="this.$refs.btn.style.color = hoverColor"
     @mouseout="this.$refs.btn.style.color = nonHoverColor"
+    @mouseup="this.$refs.btn.style.color = nonHoverColor"
   >
     <span v-html="content" />
   </button>

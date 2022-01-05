@@ -72,7 +72,7 @@ export default defineComponent({
   },
   methods: {
     changeModalPhoto(incr: number) {
-      if (incr > 0 && this.photoIndex < this.setLength) {
+      if (incr > 0 && this.photoIndex < this.setLength - 1) {
         this.photoIndex++;
       } else if (incr < 0 && this.photoIndex > 0) {
         this.photoIndex--;

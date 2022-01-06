@@ -7,7 +7,7 @@
 /frontend/*.env
 
 # local env files
-.env
+*/**/*.env
 .env.local
 .env.*.local
 
@@ -25,3 +25,4 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+*.pem

@@ -60,6 +60,7 @@ export default defineComponent({
       default: false
     }
   },
+
   computed: {
     setLength() {
       const { photoSet = {} } = this.$props;
@@ -67,9 +68,7 @@ export default defineComponent({
       return set.length;
     }
   },
-  data() {
-    return { photoIndex: 0 };
-  },
+
   methods: {
     changeModalPhoto(incr: number) {
       if (incr > 0 && this.photoIndex < this.setLength - 1) {
@@ -79,10 +78,26 @@ export default defineComponent({
       }
     },
 
+    onControlModal(e: { code: string }) {
+      const { code } = e;
+
+      if (code === 'ArrowLeft' && this.photoIndex > 0) this.photoIndex--;
+      if (code === 'ArrowRight' && this.photoIndex < this.setLength - 1)
+        this.photoIndex++;
+    },
+
     onCloseModal() {
       this.$emit('closeModal', true);
       this.photoIndex = 0;
     }
+  },
+
+  mounted() {
+    document.body.addEventListener('keydown', this.onControlModal);
+  },
+
+  data() {
+    return { photoIndex: 0 };
   }
 });
 </script>

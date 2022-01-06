@@ -33,7 +33,7 @@ export default defineComponent({
 }
 
 .side-text {
-  margin-top: 51vh;
+  margin-top: 35vh;
   transform: rotate(-90deg);
   white-space: nowrap;
   user-select: none;
